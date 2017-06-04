@@ -1,4 +1,5 @@
 const Venue = require('../models/venue');
+const { ObjectID } = require('mongodb');
 
 const addVenue = (req, res) => {
 	let venue = new Venue({
@@ -39,4 +40,25 @@ const getVenues = (req, res) => {
 	);
 };
 
-module.exports = { addVenue, getVenues };
+const removeVenue = (req, res) => {
+	const id = req.params.id;
+
+	if (!ObjectID.isValid(id)) {
+		return res.status(400).send();
+	}
+
+	Venue.findOneAndRemove({
+		_id: id
+	})
+		.then(venue => {
+			if (!venue) {
+				return res.status(404).send();
+			}
+			res.send({ venue });
+		})
+		.catch(e => {
+			res.status(400).send();
+		});
+};
+
+module.exports = { addVenue, getVenues, removeVenue };

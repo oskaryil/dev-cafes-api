@@ -11,4 +11,5 @@ router
 	.post(VenueController.addVenue)
 	.get(VenueController.getVenues);
 
+router.route('/venue/:id').delete(VenueController.removeVenue);
 module.exports = router;
