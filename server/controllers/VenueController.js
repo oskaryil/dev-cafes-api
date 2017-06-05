@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-class VenueController {}
-module.exports = VenueController;
-=======
 const Venue = require("../models/venue");
 const { ObjectID } = require("mongodb");
 
@@ -66,4 +62,3 @@ const removeVenue = (req, res) => {
 };
 
 module.exports = { addVenue, getVenues, removeVenue };
->>>>>>> 9958e767e0769d54ce7cffe8a3a60b907b3e4c05
