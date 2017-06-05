@@ -21,7 +21,7 @@ const Venue = mongoose.model("Venue", {
   },
   image: {
     type: String,
-    required: false
+    required: true
   },
   description: {
     type: String
@@ -38,7 +38,7 @@ const Venue = mongoose.model("Venue", {
   },
   createdAt: {
     type: Date,
-    default: new Date()
+    default: Date.now
   }
 });
 
