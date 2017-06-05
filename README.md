@@ -8,4 +8,4 @@
 - DELETE
 
 ### HEROKU HELP
-Use `heroku push origin master` to push up to heroku.
+Use `git push heroku master` to push up to heroku.
