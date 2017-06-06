@@ -1,4 +1,4 @@
-const Venue = require('../models/venue');
+const { Venue } = require('../models/venue');
 const { ObjectID } = require('mongodb');
 
 const addVenue = (req, res) => {
@@ -6,10 +6,8 @@ const addVenue = (req, res) => {
 		name: req.body.name,
 		address: req.body.address || '',
 		description: req.body.description,
-		options: {
-			wifi: req.body.options.wifi,
-			toilet: req.body.options.toilet
-		},
+		wifi: req.body.wifi,
+		toilet: req.body.toilet,
 		image: req.body.image
 	});
 
