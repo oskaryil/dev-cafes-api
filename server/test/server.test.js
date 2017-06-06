@@ -56,6 +56,14 @@ describe('POST /venues', () => {
 	});
 });
 
-// descrie('GET /venues', () => {
-// 	it('should ');
-// });
+describe('GET /venues', () => {
+	it('should get all venues', done => {
+		request(app)
+			.get('/venues')
+			.expect(200)
+			.expect(res => {
+				expect(res.body.venues.length).toBe(2);
+			})
+			.end(done);
+	});
+});
