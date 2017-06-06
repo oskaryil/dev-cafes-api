@@ -1,4 +1,5 @@
-# dev-cafes-api
+# Dev Cafés API
+[![Build Status](https://travis-ci.org/oskaryil/dev-cafes-api.svg?branch=development)](https://travis-ci.org/oskaryil/dev-cafes-api)
 
 ### ENDPOINTS
 * `/venues`
