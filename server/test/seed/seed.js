@@ -1,3 +1,5 @@
+const { ObjectID } = require('mongodb');
+
 const { Venue } = require('./../../models/venue');
 
 venues = [
@@ -7,7 +9,8 @@ venues = [
 		address: 'Östermalmstorg',
 		description: 'Shitty Café with bad hot cocoa',
 		wifi: false,
-		toilet: false
+		toilet: false,
+		_id: new ObjectID()
 	},
 	{
 		name: 'Espresso ShitHouse 2',
