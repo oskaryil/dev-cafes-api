@@ -42,7 +42,7 @@ const removeVenue = (req, res) => {
 	const id = req.params.id;
 
 	if (!ObjectID.isValid(id)) {
-		return res.status(400).send();
+		return res.status(404).send();
 	}
 
 	Venue.findOneAndRemove({
