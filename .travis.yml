@@ -1,5 +1,8 @@
 language: node_js
 node_js:
-    - "6"
+- '6'
 services:
-    - mongodb
+- mongodb
+deploy:
+  api_key:
+    secure: lKn0Bhf2w9mSn9/gaMRZLv3KvLkREQwZy1gSu2PB8RB1UD7YvpevhtMB+ruhPkqpXHyuyV0vjwwlq4tFtEvfiUc95YyZes/dBjjWJGENJkNStdaokggmEJTDEXLD8eAo856n8ATPHkurB0g6IjWbA0JT+4bPeXCHfvRx+AzMeyq9Krl8pQToigBRkwK/7izAm8ylXju7NdeAjrDcCDnTIfr3RFDf+m6gzJeZmfkcmMBNLdpHJDBUpuKnoBqZY7pyl+kDx/twHcaKIv1/KAQj3r8K6Qyp9NYZEZtyUz7WIpDWIUF56ckVS87YCP/BTcM75KGXGLIjC22Bc1wA3WVTha/hxLCVK2arUPNdhd7miSX2XVnn90Wgn3/sLfjQxV/GHVvH+zu5GHi/qeUNRR/+A3awu6DEI+8W3Ccxx7CWcTFt/QvMm69J9kQIwKuvZ5OM8oCr05cwJhnHcfM1BlZiKakdWnq8uyZnFic4JmEveOhz/RfYtAgig2Z4pplWDPGKWBdp13jrXAqM4dg0H0qGjd3PYoxMQUMUHHnt/uDXzoYbxCfopRGI5Rifn+6bqzXiCJZyKjUgIzm5R1RVxeTSLg4I+oPCSR7xoySVsDv6M4dg9nSQcyUz81RZSyvzkViPww2/CToddjMRBNjHG93rBDUIzHPGKN7wJNTe/b040jE=
