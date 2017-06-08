@@ -1,5 +1,6 @@
 const expect = require('expect');
 const request = require('supertest');
+const { ObjectID } = require('mongodb');
 
 const indexRoute = require('./../routes/');
 const { app } = require('./../server');
@@ -56,6 +57,52 @@ describe('POST /venues', () => {
 	});
 });
 
-// descrie('GET /venues', () => {
-// 	it('should ');
-// });
+describe('GET /venues', () => {
+	it('should get all venues', done => {
+		request(app)
+			.get('/venues')
+			.expect(200)
+			.expect(res => {
+				expect(res.body.venues.length).toBe(2);
+			})
+			.end(done);
+	});
+});
+
+describe('DELETE /venue/:id', () => {
+	it('should delete venue by id', done => {
+		let hexID = venues[0]._id.toHexString();
+
+		request(app)
+			.delete(`/venue/${hexID}`)
+			.expect(200)
+			.expect(res => {
+				expect(res.body.venue._id).toBe(hexID);
+			})
+			.end((err, res) => {
+				if (err) {
+					return done(err);
+				}
+
+				Venue.findById(hexID)
+					.then(venue => {
+						expect(venue).toNotExist();
+						done();
+					})
+					.catch(e => {
+						done(e);
+					});
+			});
+	});
+
+	it('should return 404 if venue not found', done => {
+		request(app)
+			.delete(`/venue/${new ObjectID().toHexString()}`)
+			.expect(404)
+			.end(done);
+	});
+
+	it('should return 404 if ObjectID is invalid', done => {
+		request(app).delete('/venue/123').expect(404).end(done);
+	});
+});
